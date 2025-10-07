@@ -1,0 +1,84 @@
+// prisma/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"         // local dev
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id             String      @id @default(cuid())
+  email          String      @unique
+  firstName      String?
+  lastName       String?
+  phone          String?
+  state          String?
+  marketingOptIn Boolean     @default(false)
+  userType       String      // "STUDIO" | "INSTRUCTOR" (emulated enum)
+
+  // Back-relations (no fields/references here)
+  studio         Studio?     @relation("StudioOwner")
+  instructor     Instructor? @relation("UserInstructor")
+
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+}
+
+model Studio {
+  id          String   @id @default(cuid())
+
+  // 1–1: Studio.ownerId references User.id (unique to enforce 1–1)
+  ownerId     String   @unique
+  owner       User     @relation("StudioOwner", fields: [ownerId], references: [id])
+
+  name        String
+  address     String?
+  description String?
+  size        String   @default("SMALL")  // "SMALL" | "MEDIUM" | "LARGE" | "CHAIN"
+  state       String?
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Instructor {
+  id              String   @id @default(cuid())
+
+  // 1–1: Instructor.userId references User.id (unique to enforce 1–1)
+  userId          String   @unique
+  user            User     @relation("UserInstructor", fields: [userId], references: [id])
+
+  bio             String?
+  availability    String?
+  experienceYears String?
+  skills          Json?    // use array of strings in JSON: ["Lagree","HIIT"]
+  state           String?
+  isActive        Boolean  @default(true)
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+// Add to prisma/schema.prisma
+
+model Availability {
+  id             String   @id @default(cuid())
+  // FK to Instructor (string id is fine until you wire proper relation)
+  instructorId   String
+  suburbs        String    // plain text
+  daysJson       String    // JSON string of days ["Mon","Tue",...]
+  machinesJson   String    // JSON string of machines
+  levelsJson     String    // JSON string of levels
+  timeFrom       String?
+  timeTo         String?
+  rateMin        Int?
+  rateMax        Int?
+  willingToCover Boolean   @default(false)
+  hasL1          Boolean   @default(false)
+  hasFirstAid    Boolean   @default(false)
+  notes          String?
+
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+}

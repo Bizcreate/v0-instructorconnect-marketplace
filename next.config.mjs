@@ -1,14 +1,7 @@
-/** @type {import('next').NextConfig} */
+// file: next.config.mjs  (ensure prisma bundles on server runtime)
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  images: {
-    unoptimized: true,
-  },
-}
-
-export default nextConfig
+  experimental: {
+    serverComponentsExternalPackages: ["@prisma/client", "prisma"]
+  }
+};
+export default nextConfig;

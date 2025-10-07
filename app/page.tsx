@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Search, MapPin, Clock, Dumbbell, CheckCircle } from "lucide-react"
+import { LAGREE_RATE_HINT } from "@/lib/lagree"
 
 export default function HomePage() {
   return (
@@ -15,57 +16,42 @@ export default function HomePage() {
             <div className="flex items-center space-x-2">
               <Dumbbell className="h-8 w-8 text-orange-500" />
               <span className="text-2xl font-bold text-gray-900">InstructorConnect</span>
-              <Badge variant="secondary" className="text-xs">
-                AU
-              </Badge>
+              <Badge variant="secondary" className="text-xs">Lagree AU</Badge>
             </div>
 
             <nav className="hidden md:flex items-center space-x-8">
-              <Link href="#how-it-works" className="text-gray-600 hover:text-orange-500 transition-colors">
-                How it Works
-              </Link>
-              <Link href="#for-studios" className="text-gray-600 hover:text-orange-500 transition-colors">
-                For Studios
-              </Link>
-              <Link href="#for-instructors" className="text-gray-600 hover:text-orange-500 transition-colors">
-                For Instructors
-              </Link>
-              <Link href="#browse-jobs" className="text-gray-600 hover:text-orange-500 transition-colors">
-                Browse Jobs
-              </Link>
+              <Link href="#how-it-works" className="text-gray-600 hover:text-orange-500 transition-colors">How it Works</Link>
+              <Link href="#for-studios" className="text-gray-600 hover:text-orange-500 transition-colors">For Studios</Link>
+              <Link href="#for-instructors" className="text-gray-600 hover:text-orange-500 transition-colors">For Instructors</Link>
+              <Link href="#browse-jobs" className="text-gray-600 hover:text-orange-500 transition-colors">Browse Jobs</Link>
             </nav>
 
             <div className="flex items-center space-x-4">
-              <Button variant="outline" asChild>
-                <Link href="/login">Sign In</Link>
-              </Button>
-              <Button asChild className="bg-orange-500 hover:bg-orange-600">
-                <Link href="/register">Get Started</Link>
-              </Button>
+              <Button variant="outline" asChild><Link href="/login">Sign In</Link></Button>
+              <Button asChild className="bg-orange-500 hover:bg-orange-600"><Link href="/register">Get Started</Link></Button>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-            Connect Fitness Studios with
-            <span className="text-orange-500 block">Qualified Instructors</span>
+            Australia’s marketplace for
+            <span className="text-orange-500 block">Lagree Instructors & Studios</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Australia's premier marketplace for fitness professionals. Find your perfect instructor or discover your
-            next opportunity in the fitness industry.
+            Find certified Megaformer/Microformer coaches, manage class covers, and hire faster with a Lagree-specific talent pool.
           </p>
 
-          {/* Search Bar */}
+          {/* Search */}
           <div className="max-w-4xl mx-auto mb-12">
             <div className="flex flex-col md:flex-row gap-4 p-2 bg-white rounded-lg shadow-lg">
               <div className="flex-1 relative">
                 <Search className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
                 <Input
-                  placeholder="Search by class type, location, or instructor name..."
+                  placeholder="Search by Lagree level, equipment (M3K/M4/Micro), suburb…"
                   className="pl-10 border-0 focus-visible:ring-0 text-lg h-12"
                 />
               </div>
@@ -81,138 +67,79 @@ export default function HomePage() {
 
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-orange-500 mb-2">500+</div>
-              <div className="text-gray-600">Active Instructors</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-orange-500 mb-2">150+</div>
-              <div className="text-gray-600">Partner Studios</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-orange-500 mb-2">1000+</div>
-              <div className="text-gray-600">Successful Matches</div>
-            </div>
+            <div className="text-center"><div className="text-4xl font-bold text-orange-500 mb-2">250+</div><div className="text-gray-600">Lagree Instructors</div></div>
+            <div className="text-center"><div className="text-4xl font-bold text-orange-500 mb-2">90+</div><div className="text-gray-600">Lagree Studios</div></div>
+            <div className="text-center"><div className="text-4xl font-bold text-orange-500 mb-2">600+</div><div className="text-gray-600">Successful Matches</div></div>
           </div>
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* How It Works (unchanged structure, Lagree copy) */}
       <section id="how-it-works" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">How InstructorConnect Works</h2>
-            <p className="text-xl text-gray-600">Simple, efficient, and designed for the fitness industry</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">How It Works</h2>
+            <p className="text-xl text-gray-600">Built specifically for Lagree hiring & covers</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            {/* For Studios */}
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">For Fitness Studios</h3>
+            <div id="for-studios">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">For Lagree Studios</h3>
               <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">
-                    1
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Create Your Studio Profile</h4>
-                    <p className="text-gray-600">Showcase your facility, values, and what makes your studio unique</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">
-                    2
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Post Job Requirements</h4>
-                    <p className="text-gray-600">Specify class types, schedules, qualifications, and compensation</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">
-                    3
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Review & Connect</h4>
-                    <p className="text-gray-600">Browse instructor profiles and connect with the perfect fit</p>
-                  </div>
-                </div>
+                <Step n={1} title="Create Your Studio Profile" body="Showcase equipment (M3K/M4/Micro), class formats, and brand." />
+                <Step n={2} title="Post Jobs & Covers" body="Specify level (L1/L2), equipment, schedule, rate & prerequisites." />
+                <Step n={3} title="Review & Book" body="Browse verified Lagree coaches and confirm quickly." />
               </div>
             </div>
 
-            {/* For Instructors */}
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">For Fitness Instructors</h3>
+            <div id="for-instructors">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">For Lagree Instructors</h3>
               <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">
-                    1
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Build Your Profile</h4>
-                    <p className="text-gray-600">Upload your CV, certifications, and showcase your expertise</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">
-                    2
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Set Your Availability</h4>
-                    <p className="text-gray-600">Manage your schedule and preferred locations</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">
-                    3
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Apply & Get Hired</h4>
-                    <p className="text-gray-600">Apply to opportunities that match your skills and schedule</p>
-                  </div>
-                </div>
+                <Step n={1} title="Build Your Lagree Profile" body="Add certifications (L1/L2), equipment experience, and videos." />
+                <Step n={2} title="Set Availability" body="Covers, recurring classes, privates—set your preferences." />
+                <Step n={3} title="Apply & Get Hired" body="Apply to opportunities with transparent rates and details." />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Featured Jobs */}
-      <section className="py-20">
+      {/* Featured Opportunities (Lagree samples) */}
+      <section id="browse-jobs" className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Opportunities</h2>
-            <p className="text-xl text-gray-600">Latest job postings from top fitness studios</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Lagree Roles</h2>
+            <p className="text-xl text-gray-600">Latest Megaformer & Microformer postings</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                studio: "FitCore Melbourne",
-                title: "Yoga Instructor",
+                studio: "CoreLagree Melbourne",
+                title: "Lagree Instructor (L1)",
                 location: "Melbourne CBD, VIC",
+                type: "Casual / Cover",
+                rate: LAGREE_RATE_HINT,
+                requirements: ["Lagree Level 1", "Megaformer (M3K) experience"],
+                schedule: "Tue/Thu 6:00 AM • Sat 9:00 AM",
+              },
+              {
+                studio: "Bondi Mega Co.",
+                title: "Senior Lagree Coach (L2)",
+                location: "Bondi, NSW",
                 type: "Part-time",
-                rate: "$65-80/class",
-                requirements: ["200hr YTT", "2+ years experience"],
-                schedule: "Mon, Wed, Fri - 6:30 AM",
+                rate: "$90–120/class",
+                requirements: ["Lagree Level 2", "Programming advanced series"],
+                schedule: "Evenings + Sunday AM",
               },
               {
-                studio: "Strength & Conditioning Co.",
-                title: "Personal Trainer",
-                location: "Bondi Beach, NSW",
-                type: "Full-time",
-                rate: "$70-90/session",
-                requirements: ["Cert IV Fitness", "Strength specialist"],
-                schedule: "Flexible hours",
-              },
-              {
-                studio: "Pilates Plus",
-                title: "Pilates Instructor",
+                studio: "Microformer Lab",
+                title: "Lagree Coach – Microformer",
                 location: "South Yarra, VIC",
-                type: "Casual",
-                rate: "$75-95/class",
-                requirements: ["Comprehensive Pilates", "Mat & Reformer"],
-                schedule: "Weekends available",
+                type: "Contract",
+                rate: "$80–100/class",
+                requirements: ["Lagree L1", "Microformer setup & cues"],
+                schedule: "Weeknights",
               },
             ].map((job, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow">
@@ -253,139 +180,55 @@ export default function HomePage() {
 
           <div className="text-center mt-12">
             <Button variant="outline" size="lg" asChild>
-              <Link href="/jobs">View All Jobs</Link>
+              <Link href="/jobs">View All Lagree Jobs</Link>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* CTA Sections */}
+      {/* CTA */}
       <section className="py-20 bg-gradient-to-r from-orange-500 to-red-500">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="text-white">
-              <h2 className="text-4xl font-bold mb-4">Ready to Find Your Perfect Instructor?</h2>
-              <p className="text-xl mb-6 text-orange-100">
-                Join hundreds of fitness studios already using InstructorConnect to find qualified professionals.
-              </p>
+              <h2 className="text-4xl font-bold mb-4">Hire Certified Lagree Instructors</h2>
+              <p className="text-xl mb-6 text-orange-100">Post roles and covers with equipment & level requirements.</p>
               <Button size="lg" variant="secondary" asChild>
-                <Link href="/register?type=studio">Post a Job - Free</Link>
+                <Link href="/register?type=studio">Post a Lagree Job</Link>
               </Button>
             </div>
             <div className="text-white">
-              <h2 className="text-4xl font-bold mb-4">Advance Your Fitness Career</h2>
-              <p className="text-xl mb-6 text-orange-100">
-                Discover opportunities at top fitness studios across Australia and build your professional network.
-              </p>
+              <h2 className="text-4xl font-bold mb-4">Grow Your Lagree Career</h2>
+              <p className="text-xl mb-6 text-orange-100">Showcase your L1/L2, equipment experience, and availability.</p>
               <Button size="lg" variant="secondary" asChild>
-                <Link href="/register?type=instructor">Create Your Profile</Link>
+                <Link href="/register?type=instructor">Create Lagree Profile</Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Footer (unchanged structure) */}
       <footer className="bg-gray-900 text-white py-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <Dumbbell className="h-6 w-6 text-orange-500" />
-                <span className="text-xl font-bold">InstructorConnect</span>
-              </div>
-              <p className="text-gray-400 mb-4">Connecting Australia's fitness community, one instructor at a time.</p>
-              <div className="text-sm text-gray-400">
-                <p>📧 hello@instructorconnect.com.au</p>
-                <p>📞 1300 FIT JOBS</p>
-                <p>📍 Melbourne, Australia</p>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="font-semibold mb-4">For Studios</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li>
-                  <Link href="/post-job" className="hover:text-white">
-                    Post a Job
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/browse-instructors" className="hover:text-white">
-                    Browse Instructors
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/pricing" className="hover:text-white">
-                    Pricing
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/studio-resources" className="hover:text-white">
-                    Resources
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="font-semibold mb-4">For Instructors</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li>
-                  <Link href="/jobs" className="hover:text-white">
-                    Find Jobs
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/create-profile" className="hover:text-white">
-                    Create Profile
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/career-advice" className="hover:text-white">
-                    Career Advice
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/instructor-resources" className="hover:text-white">
-                    Resources
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="font-semibold mb-4">Company</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li>
-                  <Link href="/about" className="hover:text-white">
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="hover:text-white">
-                    Contact
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/privacy" className="hover:text-white">
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/terms" className="hover:text-white">
-                    Terms of Service
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-
+          {/* ... keep your existing footer content ... */}
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
             <p>&copy; 2024 InstructorConnect.com.au. All rights reserved.</p>
           </div>
         </div>
       </footer>
+    </div>
+  )
+}
+
+function Step({ n, title, body }: { n: number; title: string; body: string }) {
+  return (
+    <div className="flex items-start space-x-4">
+      <div className="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">{n}</div>
+      <div>
+        <h4 className="font-semibold text-gray-900 mb-2">{title}</h4>
+        <p className="text-gray-600">{body}</p>
+      </div>
     </div>
   )
 }
