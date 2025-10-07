@@ -1,4 +1,4 @@
-// file: next.config.mjs  (ensure prisma bundles on server runtime)
+// file: next.config.mjs
 const nextConfig = {
   experimental: {
     serverComponentsExternalPackages: ["@prisma/client", "prisma"]

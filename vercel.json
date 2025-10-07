@@ -1,8 +1,8 @@
-// file: vercel.json  (set Node runtime + region close to Neon us-east-1)
+// file: vercel.json  (VALID JSON)
 {
     "functions": {
-      "api/**/*": { "runtime": "nodejs20.x" },
-      "app/**/*": { "runtime": "nodejs20.x" }
+      "api/**": { "runtime": "nodejs20.x" },
+      "app/**": { "runtime": "nodejs20.x" }
     },
     "regions": ["iad1"]
   }

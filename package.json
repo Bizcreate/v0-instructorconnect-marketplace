@@ -1,11 +1,10 @@
-// file: package.json  (only the new/changed parts; keep your deps)
+// file: package.json  (only the keys you must have; keep the rest of your deps)
 {
   "name": "instructorconnect-marketplace",
   "scripts": {
     "dev": "next dev",
     "build": "prisma generate && next build",
     "start": "next start",
-    "lint": "next lint",
     "postinstall": "prisma generate",
     "db:push": "prisma db push",
     "db:seed": "tsx prisma/seed.ts",
